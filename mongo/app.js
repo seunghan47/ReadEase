@@ -14,7 +14,7 @@ app.use(express.json({ extended: false}));
 
 app.get('/', (req, res) => res.send('Hello phanta!'));
 
-const conn_str = 'mongodb+srv://seunghan47:Tmdgkseogks12@cluster0.v63n9il.mongodb.net/?retryWrites=true&w=majority';
+const conn_str = 'mongodb+srv://${process.env.user}:${process.env.pass}@cluster0.v63n9il.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.set('strictQuery', false);
 mongoose.connect(conn_str, {
