@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import '../css/addItem.css'
+import axios from 'axios';
 
 function AddItem(props) {
-    
+    const isLoggedIn = localStorage.getItem("auth-token")
     const [card, setCard] = useState({
         title: "",
         author: "",
-        rating: ""
+        rating: "",
+        image: "",
+        userId: localStorage.getItem("userId") 
     })
     
     function handleChange(event) {
@@ -21,13 +24,19 @@ function AddItem(props) {
     }
     
     function submitCard(event) {
-        props.onAdd(card);
-        setCard({
-            title: "",
-            author: "",
-            rating : ""
-        })
-        event.preventDefault();
+        if (isLoggedIn && isLoggedIn != ""){
+            props.onAdd(card)
+            console.log(card);
+            setCard({
+                title: "",
+                author: "",
+                rating : "",
+                image: ""
+            })
+            
+            event.preventDefault();
+            
+        }
     }
 
     return (
@@ -44,7 +53,12 @@ function AddItem(props) {
                     onChange={handleChange}
                     value={card.author}
                     placeholder="Author: "
-                    rows="3"
+                />
+                <textarea
+                    name="image"
+                    onChange={handleChange}
+                    value={card.image}
+                    placeholder="img URL: "
                 />
                 <textarea
                     name="rating"
@@ -52,6 +66,7 @@ function AddItem(props) {
                     value={card.rating}
                     placeholder="Rate out of 5: "
                 />
+                
                 <button style = {{fontSize: '20px'}}onClick={submitCard}>+</button>
             </form>
         </div>

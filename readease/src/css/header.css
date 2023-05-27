@@ -1,41 +1,42 @@
 header {
   background-color: #f5ba13;
-  margin: auto -16px;
-  padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   height: 200px;
 }
 
 header h1 {
+  margin-top: 0px;
   color: #fff;
   font-family: "McLaren", cursive;
   font-weight: 200;
+  
 }
 
-
-
 .nav-links  {
-    display: flex;
-    margin: 0%;
-    padding: 0%;
-    text-indent: 20px;
-    list-style-type: none;
-    padding-right: 10px;
-    background-color: #f5ba13;
-    margin: auto -16px;
+  display: flex;
+  position: relative;
+  margin: 0 20px;
+  list-style: none;
+  padding: 14px;
+  font-size: 17px;
   }
 
   .nav-item {
     display: flex;
-    flex-flow: flex-start;
     margin-right: 20px;
-    color: #3A5F0B;
-
+    color: #3A5F0B; 
+    
   }
   
-  .nav-bar {
-    margin-top: 20px;
-    margin-left: 20px;
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    overflow: auto;
+    background-color: #ffffff;
+    height: 90px;
+
   }
 
   .sign {
@@ -43,19 +44,38 @@ header h1 {
     right: 20px;
   }
 button {
-  background-color: #8BC34A; /* Leafy green color */
-  color: #fff; /* Text color */
-  padding: 10px 20px; /* Padding */
-  border: none; /* Remove default button border */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 16px; /* Font size */
-  cursor: pointer; /* Change cursor on hover */
+  background-color: #f5ba13; 
+  color: #fff; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 4px; 
+  font-size: 16px; 
+  cursor: pointer; 
   font-family: "McLaren";
   font-weight: bold;
-
+  margin-right: 10px;
+  
 }
 
 button:hover {
-  background-color: #689F38; /* Darker shade of leafy green on hover */
+  background-color: #f7e738; 
+  text-decoration: none;
+}
+button a {
+  text-decoration: none;
+  color:#ffffff;
 }
 
+.link {
+  background-color: #f5ba13; 
+  color: #fff; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 4px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  font-family: "McLaren";
+  font-weight: bold;
+  margin-right: 10px;
+  
+}
